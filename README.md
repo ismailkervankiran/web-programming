@@ -13,3 +13,12 @@ Web Programlama dersi projesi. Fakültedeki seminer, atölye ve söyleşileri li
 - `etkinlik-detay.html` — etkinlik detayı
 - `etkinlik-ekle.html` — etkinlik ekleme formu
 - `etkinlik-guncelle.html` — etkinlik güncelleme formu
+
+## Sprint 2 — CSS ve Responsive Tasarım
+
+`sprint2/` klasörü Sprint 1'in kopyası üzerine CSS giydirilmiş hali:
+
+- `css/2311012067.css` — numaradan türetilen renk (ton 347) ve font (Palatino Linotype)
+- `etkinlikler.html` — tüm etkinlikler kart olarak (yeni sayfa)
+- Ana sayfada tablo yerine yaklaşan 2 etkinlik kartı
+- Telefonda tek sütun, geniş ekranda birden fazla sütun
