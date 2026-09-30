@@ -22,3 +22,7 @@ Web Programlama dersi projesi. Fakültedeki seminer, atölye ve söyleşileri li
 - `etkinlikler.html` — tüm etkinlikler kart olarak (yeni sayfa)
 - Ana sayfada tablo yerine yaklaşan 2 etkinlik kartı
 - Telefonda tek sütun, geniş ekranda birden fazla sütun
+
+## Görsel kaynağı
+
+`afis.jpg`: "2019 University of Michigan Green Career Fair" — University of Michigan School for Environment and Sustainability, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2019_University_of_Michigan_Green_Career_Fair_(48727056903).jpg)
