@@ -1,7 +1,15 @@
-# web-programming
+# Kampüs Etkinlikleri
 
-Web Programlama dersi HTML/CSS görevleri. Vercel ile yayınlanır.
+Web Programlama dersi projesi. Fakültedeki seminer, atölye ve söyleşileri listeleyen bir uygulama.
 
-## Yayınlama
+- **Canlı adres:** https://web-programming-ismail.vercel.app
+- **Hazırlayan:** İsmail Kervankıran
 
-`main` dalına her `git push` yapıldığında Vercel siteyi otomatik günceller.
+## Sprint 1 — HTML, Git ve Yayına Alma
+
+`sprint1/` klasöründe yalnızca HTML ile yazılmış sayfalar (CSS ve JavaScript yok):
+
+- `index.html` — ana sayfa, etkinlik listesi
+- `etkinlik-detay.html` — etkinlik detayı
+- `etkinlik-ekle.html` — etkinlik ekleme formu
+- `etkinlik-guncelle.html` — etkinlik güncelleme formu
