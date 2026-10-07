@@ -1,3 +1,5 @@
+https://web-programming-ismail.vercel.app
+
 # Kampüs Etkinlikleri
 
 Web Programlama dersi projesi. Fakültedeki seminer, atölye ve söyleşileri listeleyen bir uygulama.
@@ -26,3 +28,12 @@ Web Programlama dersi projesi. Fakültedeki seminer, atölye ve söyleşileri li
 ## Görsel kaynağı
 
 `afis.jpg`: "2019 University of Michigan Green Career Fair" — University of Michigan School for Environment and Sustainability, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0), [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2019_University_of_Michigan_Green_Career_Fair_(48727056903).jpg)
+
+## Sprint 3 — JavaScript ve DOM
+
+`sprint3/` klasörü Sprint 2'nin kopyası üzerine JavaScript modülleri eklenmiş hali (Live Server ile açılmalı: `http://127.0.0.1:5500/sprint3/`):
+
+- `js/data.js` — 6 etkinliklik veri dizisi
+- `js/event-list.js` — kartları veriden üretir; ana sayfada yaklaşan 2 etkinlik, liste sayfasında arama + kategori filtresi
+- `js/event-detail.js` — `?id=` ile doğru etkinliği açar, geçersiz id'de hata kutusu
+- `js/event-form.js` — ekleme/güncelleme formu doğrulaması, hata ve başarı mesajı
