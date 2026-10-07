@@ -1,0 +1,222 @@
+/* İsmail Kervankıran — 2311012067 */
+:root {
+  --no: 2311012067;
+  --ton: mod(var(--no), 360);
+  --renk-ana: hsl(var(--ton) 65% 38%);
+  --renk-zemin: hsl(var(--ton) 30% 97%);
+  --font: "Palatino Linotype", serif;
+  --bosluk-m: 1rem;  --kose: 8px;
+
+  /* Ek değişkenler — hepsi aynı tondan türetilir */
+  --renk-ana-koyu: hsl(var(--ton) 65% 30%);
+  --renk-ana-acik: hsl(var(--ton) 45% 88%);
+  --renk-yazi: hsl(var(--ton) 30% 15%);
+  --renk-kenar: hsl(var(--ton) 20% 82%);
+  --renk-kart: hsl(0 0% 100%);
+  --renk-hata: hsl(0 70% 42%);
+  --renk-hata-zemin: hsl(0 80% 97%);
+  --bosluk-s: 0.5rem;
+  --bosluk-l: 1.5rem;
+}
+body { font-family: var(--font); }
+
+/* Genel */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--renk-zemin);
+  color: var(--renk-yazi);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--renk-ana);
+  font-weight: bold;
+}
+
+/* Başlık ve menü */
+header {
+  background: var(--renk-ana);
+  color: var(--renk-kart);
+  padding: var(--bosluk-m);
+}
+
+header h1 {
+  margin: 0 0 var(--bosluk-s);
+  font-size: 1.4rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bosluk-s) var(--bosluk-m);
+}
+
+nav a {
+  color: var(--renk-kart);
+  font-weight: normal;
+  text-decoration: none;
+  padding: var(--bosluk-s) 0;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--bosluk-m);
+}
+
+footer {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--bosluk-m);
+}
+
+/* Kartlar: telefonda tek sütun, geniş ekranda birden fazla sütun */
+.kartlar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--bosluk-m);
+}
+
+.kartlar article {
+  background: var(--renk-kart);
+  border: 1px solid var(--renk-kenar);
+  border-radius: var(--kose);
+  padding: var(--bosluk-m);
+}
+
+.kartlar h2,
+.kartlar h3 {
+  margin: 0 0 var(--bosluk-s);
+  font-size: 1.1rem;
+}
+
+.kartlar p {
+  margin: 0;
+}
+
+/* Detay sayfası */
+figure {
+  margin: 0 0 var(--bosluk-m);
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  background: var(--renk-ana-acik);
+  border-radius: var(--kose);
+}
+
+figcaption {
+  font-style: italic;
+  margin-top: var(--bosluk-s);
+}
+
+dl {
+  background: var(--renk-kart);
+  border: 1px solid var(--renk-kenar);
+  border-radius: var(--kose);
+  padding: var(--bosluk-m);
+  margin: 0 0 var(--bosluk-m);
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 0 var(--bosluk-s);
+}
+
+/* Formlar: label üstte, alanlar tam genişlik */
+form p {
+  margin: 0 0 var(--bosluk-m);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--bosluk-s);
+}
+
+form br {
+  display: none;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  padding: var(--bosluk-s);
+  background: var(--renk-kart);
+  border: 1px solid var(--renk-kenar);
+  border-radius: var(--kose);
+}
+
+textarea {
+  min-height: 5rem;
+}
+
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border-color: var(--renk-hata);
+  background: var(--renk-hata-zemin);
+  color: var(--renk-hata);
+}
+
+button {
+  width: 100%;
+  font: inherit;
+  font-weight: bold;
+  color: var(--renk-kart);
+  background: var(--renk-ana-koyu);
+  border: 0;
+  border-radius: var(--kose);
+  padding: var(--bosluk-m) var(--bosluk-l);
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--renk-ana);
+}
+
+/* Geniş ekran */
+@media (min-width: 40rem) {
+  .kartlar {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+
+  .detay {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--bosluk-m);
+    align-items: start;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--bosluk-s) var(--bosluk-m);
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  button {
+    width: auto;
+  }
+}
