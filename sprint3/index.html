@@ -4,43 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kampüs Etkinlikleri</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="css/2311012067.css">
+  <script type="module" src="js/event-list.js"></script>
 </head>
 <body>
   <header>
     <h1>Kampüs Etkinlikleri</h1>
+    <p>Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p>
     <nav>
-      <a href="index.html">Ana Sayfa</a>
+      <a href="index.html" aria-current="page">Ana Sayfa</a>
       <a href="etkinlikler.html">Etkinlikler</a>
       <a href="etkinlik-ekle.html">Ekle</a>
-      <a href="etkinlik-guncelle.html">Güncelle</a>
     </nav>
   </header>
 
   <main>
-    <p>Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin.</p>
+    <h2>Yaklaşan 2 Etkinlik</h2>
+    <section id="etkinlik-listesi" class="etkinlik-listesi" data-limit="2"></section>
 
-    <section>
-      <h2>Yaklaşan 2 etkinlik</h2>
-      <div class="kartlar">
-        <article>
-          <h3>Kariyer Günleri</h3>
-          <p><time datetime="2026-10-12">12 Ekim</time></p>
-          <a href="etkinlik-detay.html">Detay →</a>
-        </article>
-        <article>
-          <h3>Robotik Atölyesi</h3>
-          <p><time datetime="2026-10-20">20 Ekim</time></p>
-          <a href="etkinlik-detay.html">Detay →</a>
-        </article>
-      </div>
-    </section>
-
-    <p><a href="etkinlikler.html">Tüm etkinlikleri gör →</a></p>
+    <p><a href="etkinlikler.html" class="buton">Tüm etkinlikleri gör</a></p>
   </main>
 
   <footer>
-    <p>İsmail Kervankıran · 2026</p>
+    <p>İsmail Kervankıran · 2311012067 · 2026</p>
   </footer>
 </body>
 </html>
