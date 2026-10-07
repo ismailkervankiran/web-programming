@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etkinlik Güncelle</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="css/2311012067.css">
+  <script type="module" src="js/event-form.js"></script>
 </head>
 <body>
   <header>
@@ -13,39 +15,58 @@
       <a href="index.html">Ana Sayfa</a>
       <a href="etkinlikler.html">Etkinlikler</a>
       <a href="etkinlik-ekle.html">Ekle</a>
-      <a href="etkinlik-guncelle.html">Güncelle</a>
     </nav>
   </header>
 
   <main>
-    <form>
+    <form id="etkinlik-formu" data-mode="guncelle" novalidate>
+      <p class="bilgi">Alanlar mevcut etkinliğin bilgileriyle dolu gelir. Bu sprintte form veri güncellemez.</p>
       <p>
-        <label for="ad">Etkinlik adı</label><br>
-        <input type="text" id="ad" name="ad" value="Kariyer Günleri 2026" required>
+        <label for="ad">Etkinlik Adı *</label>
+        <input type="text" id="ad" name="ad" required>
+        <span id="ad-hata" class="hata"></span>
       </p>
       <p>
-        <label for="kategori">Kategori</label><br>
+        <label for="kategori">Kategori *</label>
         <select id="kategori" name="kategori" required>
           <option value="">Seçiniz</option>
-          <option value="seminer" selected>Seminer</option>
-          <option value="atolye">Atölye</option>
-          <option value="soylesi">Söyleşi</option>
+          <option value="Seminer">Seminer</option>
+          <option value="Atölye">Atölye</option>
+          <option value="Söyleşi">Söyleşi</option>
         </select>
+        <span id="kategori-hata" class="hata"></span>
       </p>
       <p>
-        <label for="tarih">Tarih</label><br>
-        <input type="date" id="tarih" name="tarih" value="2026-10-12" required>
+        <label for="tarih">Tarih *</label>
+        <input type="date" id="tarih" name="tarih" required>
+        <span id="tarih-hata" class="hata"></span>
       </p>
       <p>
-        <label for="aciklama">Açıklama</label><br>
-        <textarea id="aciklama" name="aciklama">Mezun söyleşileri</textarea>
+        <label for="saat">Saat *</label>
+        <input type="time" id="saat" name="saat" required>
+        <span id="saat-hata" class="hata"></span>
+      </p>
+      <p>
+        <label for="yer">Yer *</label>
+        <input type="text" id="yer" name="yer" placeholder="Örn. A Blok Konferans Salonu" required>
+        <span id="yer-hata" class="hata"></span>
+      </p>
+      <p>
+        <label for="kontenjan">Kontenjan</label>
+        <input type="number" id="kontenjan" name="kontenjan" min="1" max="1000">
+        <span id="kontenjan-hata" class="hata"></span>
+      </p>
+      <p>
+        <label for="aciklama">Açıklama</label>
+        <textarea id="aciklama" name="aciklama"></textarea>
       </p>
       <button type="submit">Güncelle</button>
+      <div id="form-mesaj"></div>
     </form>
   </main>
 
   <footer>
-    <p>İsmail Kervankıran · 2026</p>
+    <p>İsmail Kervankıran · 2311012067 · 2026</p>
   </footer>
 </body>
 </html>
