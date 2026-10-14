@@ -37,3 +37,24 @@ Web Programlama dersi projesi. Fakültedeki seminer, atölye ve söyleşileri li
 - `js/event-list.js` — kartları veriden üretir; ana sayfada yaklaşan 2 etkinlik, liste sayfasında arama + kategori filtresi
 - `js/event-detail.js` — `?id=` ile doğru etkinliği açar, geçersiz id'de hata kutusu
 - `js/event-form.js` — ekleme/güncelleme formu doğrulaması, hata ve başarı mesajı
+
+## Sprint 4 — Vite, TypeScript ve React
+
+`frontend/` klasöründe Vite ile kurulmuş React + TypeScript projesi. Çalıştırmak için: `cd frontend && npm install && npm run dev` (http://localhost:5173).
+
+| Dosya | Görevi |
+| --- | --- |
+| `package.json` | Proje adını, `dev`/`build` komutlarını ve kullanılan paketleri tanımlar. |
+| `package-lock.json` | Yüklenen paketlerin tam sürümlerini kilitler. |
+| `node_modules/` | İndirilen paketlerdir; GitHub'a gönderilmez. |
+| `tsconfig*.json` | TypeScript derleyici ayarlarıdır. |
+| `vite.config.ts` | Vite ayarlarıdır; React eklentisini yükler. |
+| `index.html` | Tek HTML sayfasıdır; React'in çizim yaptığı boş `div#root`'u içerir. |
+| `src/main.tsx` | React'i başlatır ve `App` bileşenini `#root`'a çizer. |
+| `src/App.tsx` | Beş sayfanın (ana sayfa, etkinlikler, detay, ekle, güncelle) hepsini içeren ana bileşendir. |
+| `src/App.css` | Sprint 3'teki numaraya göre renk ve font veren CSS'tir. |
+| `src/index.css` | Tüm sayfaya genel stil dosyasıdır; bu sprintte boştur. |
+| `src/types/campus-event.ts` | Bir etkinliğin tipini (`CampusEvent`) ve kategorileri tarif eder. |
+| `src/data/events.ts` | Bu tipe uyan 6 etkinliğin verisidir. |
+| `src/utils/filter-events.ts` | Arama, kategori filtresi ve id ile bulma yapan saf fonksiyonlardır. |
+| `public/` | Olduğu gibi kopyalanan dosyalardır (`afis.svg`, `favicon.svg`). |
