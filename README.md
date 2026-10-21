@@ -58,3 +58,20 @@ Web Programlama dersi projesi. Fakültedeki seminer, atölye ve söyleşileri li
 | `src/data/events.ts` | Bu tipe uyan 6 etkinliğin verisidir. |
 | `src/utils/filter-events.ts` | Arama, kategori filtresi ve id ile bulma yapan saf fonksiyonlardır. |
 | `public/` | Olduğu gibi kopyalanan dosyalardır (`afis.svg`, `favicon.svg`). |
+
+## Sprint 5 — React Bileşenleri
+
+Sprint 4'teki tek parça `App.tsx` dokuz bileşene bölündü; ekran Sprint 4 ile aynı. State (`page`, `selectedId`, `searchText`, `category`) `App.tsx`'te kalır, bileşenler veriyi props ile alır, olayları callback ile bildirir.
+
+| Bileşen | Props |
+| --- | --- |
+| `components/layout/Header.tsx` | `title`, `text?` |
+| `components/layout/Navigation.tsx` | `current`, `onNavigate` |
+| `components/layout/Footer.tsx` | — |
+| `components/events/EventCard.tsx` | `event`, `onShowDetail` |
+| `components/events/EventList.tsx` | `events`, `onShowDetail`, `emptyText?` |
+| `components/events/EventFilter.tsx` | `searchText`, `category`, `categories`, `onSearchChange`, `onCategoryChange` |
+| `components/events/EventDetail.tsx` | `event`, `onBack`, `onEdit` |
+| `components/forms/EventForm.tsx` | `onSubmit` |
+
+Yardımcı dosyalar: `src/types/page.ts` (`PageName` tipi), `src/utils/format-date.ts` (`formatDate`).
