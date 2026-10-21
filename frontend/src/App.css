@@ -47,7 +47,7 @@ a {
 header {
   background: var(--renk-ana);
   color: var(--renk-kart);
-  padding: var(--bosluk-m);
+  padding: var(--bosluk-m) var(--bosluk-m) 0;
 }
 
 header h1 {
@@ -60,11 +60,13 @@ header p {
   font-size: 0.9rem;
 }
 
+/* Navigation, Header'ın altında aynı renkli şeritte devam eder */
 nav {
   display: flex;
   flex-wrap: wrap;
   gap: var(--bosluk-xs);
-  margin-top: var(--bosluk-s);
+  background: var(--renk-ana);
+  padding: var(--bosluk-s) var(--bosluk-m) var(--bosluk-m);
 }
 
 nav a {
@@ -165,9 +167,15 @@ button:hover {
   padding: var(--bosluk-m);
 }
 
-#sonuc {
+#sonuc,
+.sonuc {
   color: var(--renk-ana-koyu);
   font-weight: bold;
+}
+
+/* Boş liste mesajı: altında listenin boşluğu kadar yer kalsın */
+.sonuc {
+  margin-bottom: calc(1em + var(--bosluk-m));
 }
 
 /* Detay sayfası */
@@ -225,6 +233,7 @@ form p {
 
 .bilgi {
   color: var(--renk-soluk);
+  margin: 0 0 var(--bosluk-m);
 }
 
 label {
