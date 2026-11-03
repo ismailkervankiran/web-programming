@@ -263,7 +263,8 @@ textarea {
   background: var(--renk-hata-zemin);
 }
 
-.hata {
+.hata,
+.hata-metni {
   display: block;
   color: var(--renk-hata);
   font-size: 0.9rem;
@@ -286,7 +287,8 @@ textarea {
   display: none;
 }
 
-.basari-kutusu {
+.basari-kutusu,
+.mesaj-basari {
   color: var(--renk-basari);
   background: var(--renk-basari-zemin);
   border: 1px solid var(--renk-basari);
@@ -303,6 +305,85 @@ textarea {
   margin: 0;
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+/* Sprint 6: sayfa başlığı, boş hata metni, form altı mesajı */
+.bolum-baslik {
+  margin: 0 0 var(--bosluk-m);
+  font-size: 1.3rem;
+}
+
+.hata-metni:empty {
+  display: none;
+}
+
+.mesaj {
+  margin: var(--bosluk-m) 0;
+}
+
+.form + .mesaj {
+  max-width: 30rem;
+}
+
+/* Yönetim tablosu: masaüstünde tablo, telefonda kart */
+.tablo {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--renk-kart);
+}
+
+.tablo th,
+.tablo td {
+  text-align: left;
+  padding: var(--bosluk-s) var(--bosluk-m);
+  border-bottom: 1px solid var(--renk-kenar);
+}
+
+.tablo th {
+  background: var(--renk-ana);
+  color: #fff;
+}
+
+.islemler {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bosluk-s);
+}
+
+.buton-sil {
+  background: var(--renk-hata);
+}
+
+.buton-sil:hover {
+  background: hsl(0 70% 34%);
+}
+
+@media (max-width: 699px) {
+  .tablo thead {
+    display: none;
+  }
+
+  .tablo tr {
+    display: block;
+    border: 1px solid var(--renk-kenar);
+    border-radius: var(--kose);
+    margin-bottom: var(--bosluk-m);
+    background: var(--renk-kart);
+  }
+
+  .tablo td {
+    display: block;
+    border-bottom: 0;
+  }
+
+  .tablo td.islemler {
+    display: flex;
+  }
+
+  .tablo td[data-baslik]::before {
+    content: attr(data-baslik) ": ";
+    font-weight: 700;
+  }
 }
 
 /* Geniş ekran */
