@@ -1,10 +1,11 @@
-https://web-programming-ismail.vercel.app
+https://ismailkervankiran-frontend.vercel.app
 
 # Kampüs Etkinlikleri
 
 Web Programlama dersi projesi. Fakültedeki seminer, atölye ve söyleşileri listeleyen bir uygulama.
 
-- **Canlı adres:** https://web-programming-ismail.vercel.app
+- **Canlı adres (vize):** https://ismailkervankiran-frontend.vercel.app
+- **Sprint 1–5 adresi:** https://web-programming-ismail.vercel.app
 - **Hazırlayan:** İsmail Kervankıran
 
 ## Sprint 1 — HTML, Git ve Yayına Alma
@@ -75,3 +76,42 @@ Sprint 4'teki tek parça `App.tsx` dokuz bileşene bölündü; ekran Sprint 4 il
 | `components/forms/EventForm.tsx` | `onSubmit` |
 
 Yardımcı dosyalar: `src/types/page.ts` (`PageName` tipi), `src/utils/format-date.ts` (`formatDate`).
+
+## Sprint 6 + Vize — Router, Context ve Yönetim
+
+Canlı adres: **https://ismailkervankiran-frontend.vercel.app**
+
+### Kurulum
+
+```bash
+cd frontend
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # dist/ klasörüne üretim çıktısı
+```
+
+### Route listesi
+
+| Adres | Sayfa | Görevi |
+| --- | --- | --- |
+| `/` | `HomePage` | Yaklaşan 2 etkinlik |
+| `/events` | `EventsPage` | Tüm etkinlikler, arama ve kategori filtresi |
+| `/events/:id` | `EventDetailPage` | Etkinlik detayı (`useParams` ile id okunur) |
+| `/login` | `LoginPage` | Giriş formu (e-posta, şifre doğrulaması) |
+| `/register` | `RegisterPage` | Kayıt formu (ad soyad, e-posta, iki şifre) |
+| `/forgot-password` | `ForgotPasswordPage` | Şifremi unuttum formu |
+| `/admin` | `AdminPage` | Yönetim tablosu: Düzenle, Sil (onaylı), Yeni etkinlik |
+| `/admin/new` | `AddEventPage` | Etkinlik ekleme formu |
+| `/admin/:id/edit` | `EditEventPage` | Etkinlik güncelleme formu |
+| `*` | `NotFoundPage` | Sayfa bulunamadı |
+
+### Yapı
+
+- `src/main.tsx` — `App`'i `BrowserRouter` ve `EventsProvider` ile sarar.
+- `src/App.tsx` — sadece `Header`, `Navigation`, `Routes` ve `Footer`; state yok.
+- `src/context/EventsContext.tsx` — etkinlik listesi ve `addEvent`, `updateEvent`, `deleteEvent`; sayfalar `useEvents()` ile okur. Ekle/güncelle/sil Ana Sayfa ve Etkinlikler'e de yansır (sayfa yenilenince veri başa döner).
+- `src/pages/` — 10 sayfa bileşeni.
+- `src/components/forms/EventForm.tsx` — controlled form; `initialData`, `submitText`, `onSubmit` props'ları.
+- `src/utils/validate-event.ts` — etkinlik formu doğrulaması (ad ≥ 3, kategori seçili, tarih/saat/yer dolu, kontenjan 1–1000 tam sayı, açıklama ≥ 10).
+- `frontend/vercel.json` — her adresi `index.html`'e yönlendirir; `/events/event-2` gibi adresler yenilenince de açılır.
+- Menü `NavLink`, sayfa içi bağlantılar `Link`, kayıttan sonra geçiş `useNavigate` ile yapılır. `types/page.ts` silindi.
