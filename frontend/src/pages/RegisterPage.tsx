@@ -29,62 +29,62 @@ function RegisterPage() {
 
   return (
     <>
+      {sent && <p className="mesaj mesaj-basari">Form geçerli. Gerçek kayıt Sprint 10'da eklenecek.</p>}
+
       <form className="form" noValidate onSubmit={handleSubmit}>
-        <p>
+        <p className="alan">
           <label htmlFor="name">Ad Soyad</label>
           <input
+            type="text"
             id="name"
-            name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             aria-invalid={errors.name ? true : undefined}
           />
           <span className="hata-metni">{errors.name}</span>
         </p>
-        <p>
+        <p className="alan">
           <label htmlFor="email">E-posta</label>
           <input
             type="email"
             id="email"
-            name="email"
-            placeholder="ornek@ogr.sdu.edu.tr"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             aria-invalid={errors.email ? true : undefined}
           />
           <span className="hata-metni">{errors.email}</span>
         </p>
-        <p>
+        <p className="alan">
           <label htmlFor="password">Şifre</label>
           <input
             type="password"
             id="password"
-            name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             aria-invalid={errors.password ? true : undefined}
           />
           <span className="hata-metni">{errors.password}</span>
         </p>
-        <p>
+        <p className="alan">
           <label htmlFor="password2">Şifre (tekrar)</label>
           <input
             type="password"
             id="password2"
-            name="password2"
             value={password2}
             onChange={(e) => setPassword2(e.target.value)}
             aria-invalid={errors.password2 ? true : undefined}
           />
           <span className="hata-metni">{errors.password2}</span>
         </p>
-        <button type="submit">Kayıt ol</button>
+        <p className="form-butonlar">
+          <button type="submit" className="buton">
+            Kayıt ol
+          </button>
+        </p>
       </form>
 
-      {sent && <p className="mesaj mesaj-basari">Bilgiler geçerli. Gerçek kayıt Sprint 10'da yapılacak.</p>}
-
-      <p>
-        Zaten hesabın var mı? <Link to="/login">Giriş yap</Link>
+      <p className="form-baglantilar">
+        <Link to="/login">Zaten hesabın var mı? Giriş yap</Link>
       </p>
     </>
   );

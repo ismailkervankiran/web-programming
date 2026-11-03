@@ -44,22 +44,22 @@ export const events: CampusEvent[] = [
   },
   {
     id: "event-5",
-    title: "Yapay Zekâ ve Gelecek",
-    category: "Seminer",
+    title: "Kodlama Yarışması",
+    category: "Yarışma",
     date: "2026-11-10",
-    time: "11:00",
-    location: "A Blok Konferans Salonu",
-    description: "Yapay zekânın meslekleri nasıl değiştirdiği üzerine seminer.",
-    capacity: 150
+    time: "09:30",
+    location: "Kütüphane Etkinlik Alanı",
+    description: "Üç kişilik takımlarla dört saatlik algoritma yarışması.",
+    capacity: 10
   },
   {
     id: "event-6",
-    title: "Girişimcilik Söyleşisi",
-    category: "Söyleşi",
+    title: "Yapay Zekâ Semineri",
+    category: "Seminer",
     date: "2026-11-17",
-    time: "16:00",
-    location: "Kültür Merkezi Salon 1",
-    description: "Kendi şirketini kuran mezunlarla tanışma ve soru-cevap.",
-    capacity: 80
+    time: "14:30",
+    location: "A Blok Konferans Salonu",
+    description: "Büyük dil modelleri nasıl çalışır? Temel kavramlar ve örnekler.",
+    capacity: 50
   }
 ];

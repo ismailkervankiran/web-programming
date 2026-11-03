@@ -16,8 +16,8 @@ function EventFilter({
   onCategoryChange
 }: EventFilterProps) {
   return (
-    <form className="filtre" onSubmit={(e) => e.preventDefault()}>
-      <div>
+    <form className="filtre" role="search" onSubmit={(e) => e.preventDefault()}>
+      <p className="alan">
         <label htmlFor="arama">Etkinlik ara</label>
         <input
           type="search"
@@ -26,8 +26,8 @@ function EventFilter({
           value={searchText}
           onChange={(e) => onSearchChange(e.target.value)}
         />
-      </div>
-      <div>
+      </p>
+      <p className="alan">
         <label htmlFor="kategori-filtre">Kategori</label>
         <select
           id="kategori-filtre"
@@ -41,7 +41,7 @@ function EventFilter({
             </option>
           ))}
         </select>
-      </div>
+      </p>
     </form>
   );
 }

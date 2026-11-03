@@ -29,20 +29,19 @@ function EventForm({ initialData, submitText, onSubmit }: EventFormProps) {
 
   return (
     <form className="form" noValidate onSubmit={handleSubmit}>
-      <p>
+      <p className="alan">
         <label htmlFor="title">Etkinlik Adı</label>
         <input
+          type="text"
           id="title"
           name="title"
-          maxLength={80}
-          placeholder="Örn. Kariyer Günleri 2026"
           value={data.title}
           onChange={handleChange}
           aria-invalid={errors.title ? true : undefined}
         />
         <span className="hata-metni">{errors.title}</span>
       </p>
-      <p>
+      <p className="alan">
         <label htmlFor="category">Kategori</label>
         <select
           id="category"
@@ -60,7 +59,7 @@ function EventForm({ initialData, submitText, onSubmit }: EventFormProps) {
         </select>
         <span className="hata-metni">{errors.category}</span>
       </p>
-      <p>
+      <p className="alan">
         <label htmlFor="date">Tarih</label>
         <input
           type="date"
@@ -72,7 +71,7 @@ function EventForm({ initialData, submitText, onSubmit }: EventFormProps) {
         />
         <span className="hata-metni">{errors.date}</span>
       </p>
-      <p>
+      <p className="alan">
         <label htmlFor="time">Saat</label>
         <input
           type="time"
@@ -84,34 +83,31 @@ function EventForm({ initialData, submitText, onSubmit }: EventFormProps) {
         />
         <span className="hata-metni">{errors.time}</span>
       </p>
-      <p>
+      <p className="alan">
         <label htmlFor="location">Yer</label>
         <input
+          type="text"
           id="location"
           name="location"
-          maxLength={80}
-          placeholder="Örn. A Blok Konferans Salonu"
           value={data.location}
           onChange={handleChange}
           aria-invalid={errors.location ? true : undefined}
         />
         <span className="hata-metni">{errors.location}</span>
       </p>
-      <p>
+      <p className="alan">
         <label htmlFor="capacity">Kontenjan</label>
         <input
           type="number"
           id="capacity"
           name="capacity"
-          min={1}
-          max={1000}
           value={data.capacity}
           onChange={handleChange}
           aria-invalid={errors.capacity ? true : undefined}
         />
         <span className="hata-metni">{errors.capacity}</span>
       </p>
-      <p>
+      <p className="alan">
         <label htmlFor="description">Açıklama</label>
         <textarea
           id="description"
@@ -123,7 +119,11 @@ function EventForm({ initialData, submitText, onSubmit }: EventFormProps) {
         />
         <span className="hata-metni">{errors.description}</span>
       </p>
-      <button type="submit">{submitText}</button>
+      <p className="form-butonlar">
+        <button type="submit" className="buton">
+          {submitText}
+        </button>
+      </p>
     </form>
   );
 }

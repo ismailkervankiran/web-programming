@@ -53,6 +53,6 @@ export function EventsProvider({ children }: { children: ReactNode }) {
 // eslint-disable-next-line react-refresh/only-export-components
 export function useEvents() {
   const value = useContext(EventsContext);
-  if (value === null) throw new Error("EventsProvider yok");
+  if (value === null) throw new Error("useEvents, EventsProvider içinde kullanılmalı.");
   return value;
 }

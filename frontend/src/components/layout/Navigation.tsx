@@ -10,12 +10,16 @@ const menu = [
 function Navigation() {
   return (
     <nav className="menu">
-      {menu.map((item) => (
-        // end: "/" sadece ana sayfada aktif olsun
-        <NavLink key={item.to} to={item.to} end={item.to === "/"}>
-          {item.label}
-        </NavLink>
-      ))}
+      <ul>
+        {menu.map((item) => (
+          <li key={item.to}>
+            {/* end: "/" sadece ana sayfada aktif olsun */}
+            <NavLink to={item.to} end={item.to === "/"}>
+              {item.label}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }

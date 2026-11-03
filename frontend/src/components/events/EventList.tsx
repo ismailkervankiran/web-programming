@@ -6,13 +6,13 @@ interface EventListProps {
   emptyText?: string;
 }
 
-function EventList({ events, emptyText }: EventListProps) {
+function EventList({ events, emptyText = "Gösterilecek etkinlik yok." }: EventListProps) {
   if (events.length === 0) {
     return <p className="sonuc">{emptyText}</p>;
   }
 
   return (
-    <section className="etkinlik-listesi">
+    <section className="etkinlik-listesi" aria-label="Etkinlikler">
       {events.map((event) => (
         <EventCard key={event.id} event={event} />
       ))}

@@ -18,40 +18,41 @@ function LoginPage() {
 
   return (
     <>
+      {sent && <p className="mesaj mesaj-basari">Form geçerli. Gerçek giriş Sprint 10'da eklenecek.</p>}
+
       <form className="form" noValidate onSubmit={handleSubmit}>
-        <p>
+        <p className="alan">
           <label htmlFor="email">E-posta</label>
           <input
             type="email"
             id="email"
-            name="email"
-            placeholder="ornek@ogr.sdu.edu.tr"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             aria-invalid={errors.email ? true : undefined}
           />
           <span className="hata-metni">{errors.email}</span>
         </p>
-        <p>
+        <p className="alan">
           <label htmlFor="password">Şifre</label>
           <input
             type="password"
             id="password"
-            name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             aria-invalid={errors.password ? true : undefined}
           />
           <span className="hata-metni">{errors.password}</span>
         </p>
-        <button type="submit">Giriş yap</button>
+        <p className="form-butonlar">
+          <button type="submit" className="buton">
+            Giriş yap
+          </button>
+        </p>
       </form>
 
-      {sent && <p className="mesaj mesaj-basari">Bilgiler geçerli. Gerçek giriş Sprint 10'da yapılacak.</p>}
-
-      <p className="butonlar">
+      <p className="form-baglantilar">
         <Link to="/forgot-password">Şifremi unuttum</Link>
-        <Link to="/register">Kayıt ol</Link>
+        <Link to="/register">Hesabın yok mu? Kayıt ol</Link>
       </p>
     </>
   );

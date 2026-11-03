@@ -9,7 +9,7 @@ function HomePage() {
   return (
     <>
       <h2 className="bolum-baslik">Yaklaşan 2 Etkinlik</h2>
-      <EventList events={upcoming} emptyText="Henüz etkinlik yok." />
+      <EventList events={upcoming} />
       <p>
         <Link className="buton" to="/events">
           Tüm etkinlikleri gör

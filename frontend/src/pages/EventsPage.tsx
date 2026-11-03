@@ -23,7 +23,7 @@ function EventsPage() {
         onSearchChange={setSearchText}
         onCategoryChange={setCategory}
       />
-      {filtered.length > 0 && <p id="sonuc">{filtered.length} etkinlik listeleniyor.</p>}
+      {filtered.length > 0 && <p className="sonuc">{filtered.length} etkinlik listeleniyor.</p>}
       <EventList events={filtered} emptyText="Aramanıza uygun etkinlik bulunamadı." />
     </>
   );

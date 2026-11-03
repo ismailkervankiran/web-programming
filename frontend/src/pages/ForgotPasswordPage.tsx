@@ -15,27 +15,30 @@ function ForgotPasswordPage() {
 
   return (
     <>
-      <p className="bilgi">E-posta adresinizi yazın; şifre sıfırlama bağlantısı gönderelim.</p>
+      <p>Kayıtlı e-posta adresinizi yazın, şifre yenileme bağlantısı gönderelim.</p>
+
+      {sent && <p className="mesaj mesaj-basari">Bağlantı {email} adresine gönderildi (demo).</p>}
+
       <form className="form" noValidate onSubmit={handleSubmit}>
-        <p>
+        <p className="alan">
           <label htmlFor="email">E-posta</label>
           <input
             type="email"
             id="email"
-            name="email"
-            placeholder="ornek@ogr.sdu.edu.tr"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             aria-invalid={error ? true : undefined}
           />
           <span className="hata-metni">{error}</span>
         </p>
-        <button type="submit">Bağlantı gönder</button>
+        <p className="form-butonlar">
+          <button type="submit" className="buton">
+            Bağlantı gönder
+          </button>
+        </p>
       </form>
 
-      {sent && <p className="mesaj mesaj-basari">Bağlantı {email} adresine gönderildi (demo).</p>}
-
-      <p>
+      <p className="form-baglantilar">
         <Link to="/login">← Girişe dön</Link>
       </p>
     </>
