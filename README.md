@@ -115,3 +115,16 @@ npm run build    # dist/ klasörüne üretim çıktısı
 - `src/utils/validate-event.ts` — etkinlik formu doğrulaması (ad ≥ 3, kategori seçili, tarih/saat/yer dolu, kontenjan 1–1000 tam sayı, açıklama ≥ 10).
 - `frontend/vercel.json` — her adresi `index.html`'e yönlendirir; `/events/event-2` gibi adresler yenilenince de açılır.
 - Menü `NavLink`, sayfa içi bağlantılar `Link`, kayıttan sonra geçiş `useNavigate` ile yapılır. `types/page.ts` silindi.
+
+## Sprint 7 — Express ile REST API
+
+Repo artık iki uygulama içerir: `frontend/` (React + Vite, değişmedi) ve `backend/` (Node + Express, `http://localhost:3000`). Backend bu sprintte canlıya alınmaz.
+
+```bash
+cd backend
+npm install
+cp .env.example .env
+npm run dev
+```
+
+Endpoint'ler: `GET /health`, `GET /events`, `GET /events/:id`, `POST /events`. REST sözleşmesi ve ayrıntılar: [`backend/README.md`](backend/README.md). Postman collection: `backend/requests/kampus-api.json`.
