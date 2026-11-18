@@ -128,3 +128,17 @@ npm run dev
 ```
 
 Endpoint'ler: `GET /health`, `GET /events`, `GET /events/:id`, `POST /events`. REST sözleşmesi ve ayrıntılar: [`backend/README.md`](backend/README.md). Postman collection: `backend/requests/kampus-api.json`.
+
+## Sprint 8 — MongoDB ve Mongoose
+
+Adresler aynı kaldı, verinin yeri değişti: controller'lar artık bellekteki dizi yerine Mongoose `Event` modelini (`find`, `findById`, `create`) kullanıyor; kayıtlar MongoDB'de kalıcı. Etkinlik id'si artık MongoDB'nin `_id`'si.
+
+```bash
+cd backend
+npm install
+cp .env.example .env   # MONGODB_URI'yi kendi Atlas adresinle değiştir
+npm run seed           # 6 örnek etkinlik
+npm run dev
+```
+
+Ayrıntılar (schema kuralları, REST sözleşmesi, test istekleri): [`backend/README.md`](backend/README.md).
